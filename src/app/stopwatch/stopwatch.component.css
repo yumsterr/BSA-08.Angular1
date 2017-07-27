@@ -1,0 +1,56 @@
+.stopwatch {
+    padding: 45px 15px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 55px;
+}
+
+.time div {
+    padding-right: 15px;
+    position: relative;
+}
+
+.time div::after {
+    content: ':';
+    font-size: 40px;
+    position: absolute;
+    top: 7px;
+    right: 1px;
+}
+
+.time div:last-child::after {
+    content:'';
+}
+
+.btn-stopwatch {
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.btn-start {
+    background-color: #26C6DA;
+}
+
+.btn-pause {
+    background-color: #FFA726;
+}
+
+.btn-reset {
+    background-color: #EF5350;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+

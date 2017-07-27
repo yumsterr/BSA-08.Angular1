@@ -1,0 +1,28 @@
+.timer-container {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-start {
+    margin-right: 20px;
+    background-color: #C5E1A5;
+}
+
+.btn-pause {
+    margin-right: 20px;
+    background-color: #FFF59D;
+}
+
+.btn-reset {
+    margin-right: 20px;
+    background-color: #EF9A9A;
+}
+
+.time-slider {
+    width: 250px;
+}
+
+input {
+    width: 50px;
+}

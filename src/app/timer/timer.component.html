@@ -1,0 +1,24 @@
+<div class="timer-container">
+  <div class="timer">
+    <h1>Set time</h1>
+    <h3>Minutes</h3>
+    <md-slider class="time-slider" disabled="false" max="60" min="0" step="1" thumb-label="true" tick-interval="10" [(ngModel)]="sliderMinVal">
+    </md-slider>
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Minutes" disabled [(ngModel)]="sliderMinVal">
+    </md-input-container>
+    <br>
+
+    <h3>Seconds</h3>
+    <md-slider class="time-slider" disabled="false" max="60" min="0" step="1" thumb-label="true" tick-interval="10" [(ngModel)]="sliderSecVal">
+    </md-slider>
+    <md-input-container class="example-full-width">
+      <input mdInput placeholder="Seconds" disabled [(ngModel)]="sliderSecVal">
+    </md-input-container>
+    <br>
+    <button md-raised-button (click)="startTimer()" class="btn-start">Start</button>
+    <button md-raised-button (click)="pauseTimer()" class="btn-pause">Pause</button>
+    <button md-raised-button (click)="resertTimer()" class="btn-reset">Reset</button>
+
+  </div>
+</div>

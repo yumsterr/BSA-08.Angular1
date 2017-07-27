@@ -1,0 +1,12 @@
+<div class="stopwatch">
+  <div class="time">
+    <div class="min">{{minutes}}</div>
+    <div class="sec">{{seconds}}</div>
+    <div class="mlsec">{{mlseconds}}</div>
+  </div>
+  <div class="controls">
+    <button md-fab (click)="startTimer()" class="btn-start btn-stopwatch">Start</button>
+    <button md-fab (click)="pauseTimer()" class="btn-pause btn-stopwatch">Pause</button>
+    <button md-fab (click)="resertTimer()" class="btn-reset btn-stopwatch">Reset</button>
+  </div>
+</div>
