@@ -26,7 +26,7 @@
 }
 
 .time div:last-child::after {
-    content:'';
+    content: '';
 }
 
 .btn-stopwatch {
@@ -41,6 +41,10 @@
     background-color: #26C6DA;
 }
 
+.btn-lap {
+    background-color: #7E57C2;
+}
+
 .btn-pause {
     background-color: #FFA726;
 }
@@ -53,4 +57,15 @@
     display: flex;
     justify-content: center;
 }
-
+.result-table {
+    margin-top:40px;
+}
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.result-item {
+    display: flex;
+    justify-content: space-between;
+}
