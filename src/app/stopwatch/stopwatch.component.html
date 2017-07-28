@@ -12,18 +12,23 @@
   </div>
   <div class="result-table">
     <div class="head">
-      <div class="total-time">Total time</div>
-      <div class="lap-time">Lap time</div>
-      <div class="avg-lap">Average lap</div>
-      <div class="prev-diff">Diff vs prev</div>
+      <div>№</div>
+      <div>Total time</div>
+      <div>Lap time</div>
+      <div>Diff vs prev</div>
+      <div>Average lap</div>
+      <div>Diff vs avg</div>
     </div>
-    <div *ngFor='let item of stopwatchHistory'>
+    <div *ngFor='let item of stopwatchHistory; let i = index'>
       <div class="result-item">
-        <div class="total-time">{{item.total}}</div>
-        <div class="lap-time">{{item.lap}}</div>
-        <div class="avg-lap">{{item.avg}}</div>
-        <div class="prev-diff">{{item.diff}}</div>
+        <div>{{i+1}}</div>
+        <div>{{item.total}}</div>
+        <div>{{item.lap}}</div>
+        <div class="{{item.diffColor}}">{{item.diff}}</div>
+        <div>{{item.avg}}</div>
+        <div class="{{item.avgDiffColor}}">{{item.avgDiff}}</div>
       </div>
     </div>
+
   </div>
 </div>
