@@ -22,13 +22,12 @@
     <div *ngFor='let item of stopwatchHistory; let i = index'>
       <div class="result-item">
         <div>{{i+1}}</div>
-        <div>{{item.total}}</div>
-        <div>{{item.lap}}</div>
-        <div class="{{item.diffColor}}">{{item.diff}}</div>
-        <div>{{item.avg}}</div>
-        <div class="{{item.avgDiffColor}}">{{item.avgDiff}}</div>
+        <div>{{item.total | formatTime}}</div>
+        <div>{{item.lap | formatTime}}</div>
+        <div [ngClass]="item.diffColor">{{item.diff | formatTime}}</div>
+        <div>{{item.avg | formatTime}}</div>
+        <div [ngClass]="item.avgDiffColor">{{item.avgDiff | formatTime}}</div>
       </div>
     </div>
-
   </div>
 </div>

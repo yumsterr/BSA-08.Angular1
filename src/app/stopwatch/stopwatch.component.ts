@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Calculations } from '../services/calculations.service';
+import { FormatTime } from '../services/format-time.service';
 
 interface ILapInfo {
   total: number;
@@ -14,7 +16,8 @@ interface ILapInfo {
 @Component({
   selector: 'app-stopwatch',
   templateUrl: './stopwatch.component.html',
-  styleUrls: ['./stopwatch.component.css']
+  styleUrls: ['./stopwatch.component.css'],
+  providers: [Calculations, FormatTime]
 })
 
 export class StopwatchComponent implements OnInit {
@@ -29,7 +32,7 @@ export class StopwatchComponent implements OnInit {
   currentResRow = {} as ILapInfo;
   avgLap = [];
 
-  constructor() { }
+  constructor(private calcServise: Calculations, private formatTime: FormatTime) {  }
 
   ngOnInit() {
     console.log(this.stopwatchHistory);
@@ -74,7 +77,7 @@ export class StopwatchComponent implements OnInit {
 
     this.currentResRow.total = this.currentWatchPos;
     this.currentResRow.lap = lapTime;
-    this.currentResRow.avg = this.average();
+    this.currentResRow.avg = this.calcServise.average(this.currentResRow, this.stopwatchHistory);
 
     if (this.stopwatchHistory.length > 0) {
       prevLapTime = this.stopwatchHistory[this.stopwatchHistory.length - 1].lap;
@@ -102,17 +105,6 @@ export class StopwatchComponent implements OnInit {
     this.minutes = Math.trunc((mlseconds / 1000) / 60);
     this.seconds = Math.trunc((mlseconds / 1000) % 60);
     this.mlseconds = (mlseconds % 1000);
-  }
-
-  average() {
-    let sum = this.currentResRow.lap;
-
-    for (let i = 0; i < this.stopwatchHistory.length; i++) {
-      const lapTime = this.stopwatchHistory[i].lap || 0;
-      sum += parseInt(lapTime, 10);
-    }
-    const avg = Math.round(sum / (this.stopwatchHistory.length + 1));
-    return avg;
   }
 
 }

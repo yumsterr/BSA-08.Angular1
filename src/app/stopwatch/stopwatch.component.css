@@ -59,7 +59,8 @@
 }
 
 .result-table {
-    margin-top: 40px;
+    margin: 40px auto;
+    width: 700px;
 }
 
 .head {

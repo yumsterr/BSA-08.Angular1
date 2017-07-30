@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { ClocksComponent } from './clocks/clocks.component';
 import { TimerComponent } from './timer/timer.component';
 import { StopwatchComponent } from './stopwatch/stopwatch.component';
-// import { SliderComponent } from './ui-controls/slider/slider.component';
+import { FormatTimePipe } from './pipes/format-time.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { StopwatchComponent } from './stopwatch/stopwatch.component';
     ClocksComponent,
     TimerComponent,
     StopwatchComponent,
+    FormatTimePipe,
   ],
   imports: [
     BrowserModule,
